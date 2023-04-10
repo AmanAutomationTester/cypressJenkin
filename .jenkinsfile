@@ -15,12 +15,10 @@ stage ('Test')
 {
 steps
 {
-echo 'Executing spec file in Cypress
+echo 'Executing spec file in Cypress'
 bat "npm test"
 }
 }
-
-
 stage ('Read failures json')
 {
 steps
