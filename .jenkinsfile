@@ -15,7 +15,7 @@ stage ('Test')
 {
 steps
 {
-echo 'Executing spec file in Cypress
+echo 'Executing spec file in Cypress'
 bat "npm test"
 }
 }
