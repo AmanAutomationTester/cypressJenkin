@@ -22,18 +22,8 @@ pipeline
         stage ('Read failures json')
         {
             steps
-            {
-                import groovy.io.FileType
-                def list = []
-
-                def dir = new File("/cypress/logs")
-                dir.eachFileRecurse (FileType.FILES) {
-                    file -> list << file
-                }
-                list.each {
-                    println it.path
-                }
-            }
+           def fileList = bat (script: 'ls /cypress/logs/*.json', returnStdout: true).trim().split("\n")
+           echo fileList
         }
     }
 }
