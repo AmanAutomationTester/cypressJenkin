@@ -1,41 +1,39 @@
 pipeline
 {
-agent any
+    agent any
 
-stages
-{
-stage('Build')
-{
-steps
-{
-bat "npm install"
-}
-}
-stage ('Test')
-{
-steps
-{
-echo 'Executing spec file in Cypress'
-bat "npm test"
-}
-}
-stage ('Read failures json')
-{
-steps
-{
-def list = []
+    stages
+    {
+        stage('Build')
+        {
+            steps
+            {
+                bat "npm install"
+            }
+        }
+        stage ('Test')
+        {
+            steps
+            {
+                echo 'Executing spec file in Cypress'
+                bat "npm test"
+            }
+        }
+        stage ('Read failures json')
+        {
+            steps
+            {
+                import groovy.io.FileType
+                def list = []
 
-def dir = new File("/cypress/logs")
-dir.eachFileRecurse (FileType.FILES) { file ->
-  list << file
-}
-list.each {
-  println it.path
-}
-}
-}
-
-
-
-}
+                def dir = new File("/cypress/logs")
+                dir.eachFileRecurse (FileType.FILES) {
+                    file -> list << file
+                }
+                list.each {
+                    println it.path
+                }
+            }
+        }
+    }
 }
