@@ -23,8 +23,12 @@ pipeline
         {
             steps
             {
-           def fileList = bat (script: 'ls /cypress/logs/*.json', returnStdout: true).trim().split("\n")
-           echo fileList
+                $files = Get - ChildItem - Path /cypress/logs - Filter *.json
+                foreach ($file in $files) {
+                    $content = Get - Content $file.FullName - Raw | ConvertFrom 
+                        - Json
+                    # Do something with $content
+                }
             }
         }
     }
