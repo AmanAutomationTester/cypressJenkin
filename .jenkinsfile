@@ -1,0 +1,23 @@
+pipeline
+{
+agent any
+
+stages
+{
+stage('Build')
+{
+steps
+{
+bat "npm install"
+}
+}
+stage ('Test')
+{
+steps
+{
+echo 'Executing spec file in Cypress
+bat "npm test"
+}
+}
+}
+}
