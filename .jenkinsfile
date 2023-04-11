@@ -23,15 +23,14 @@ pipeline
         {
             steps
             {
-               
                 // import groovy.json.JsonSlurper;
-                 echo 'Read json files'
+                echo 'Read json files'
                 def directoryPath = 'logs'
                 def directory = new File(directoryPath)
-
+                def slurper = new JsonSlurper()
 
                 directory.eachFileMatch(~ /.*\.json/) {
-                    file -> def json = new JsonSlurper().parseText(file.text)
+                    file -> def json = slurper.parseText(file.text)
                     echo json;
                 }
             }
