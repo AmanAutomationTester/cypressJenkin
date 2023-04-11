@@ -23,7 +23,8 @@ pipeline
         {
             steps
             {
-               script {
+                script {
+                    import groovy.json.JsonSlurper; 
                     def jsonString = '{"name": "John", "age": 30}'
                     def slurper = new JsonSlurper()
                     def json = slurper.parseText(jsonString)
