@@ -24,7 +24,7 @@ pipeline
             steps
             {
                
-                import groovy.json.JsonSlurper;
+                // import groovy.json.JsonSlurper;
                  echo 'Read json files'
                 def directoryPath = 'logs'
                 def directory = new File(directoryPath)
