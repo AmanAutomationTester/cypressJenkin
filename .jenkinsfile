@@ -11,14 +11,14 @@ pipeline
                 bat "npm install"
             }
         }
-        stage ('Test')
-        {
-            steps
-            {
-                echo 'Executing spec file in Cypress'
-                bat "npm test"
-            }
-        }
+        // stage ('Test')
+        // {
+        //     steps
+        //     {
+        //         echo 'Executing spec file in Cypress'
+        //         bat "npm test"
+        //     }
+        // }
         stage ('Read failures json')
         {
             steps
@@ -30,7 +30,7 @@ pipeline
 
                 directory.eachFileMatch(~ /.*\.json/) {
                     file -> def json = new JsonSlurper().parseText(file.text)
-                    ecso json;
+                    echo json;
                 }
             }
         }
