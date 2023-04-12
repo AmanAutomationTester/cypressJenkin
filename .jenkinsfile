@@ -30,7 +30,7 @@ pipeline
                         name -> def props = readJSON file: "${name}"                                             
                         list.add(props.title);
                     }                      
-                    writeCSV file: '**/fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';');
+                    writeCSV file: 'cypress/fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';');
                 }
             }
         }
