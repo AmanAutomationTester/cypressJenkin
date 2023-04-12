@@ -32,7 +32,7 @@ pipeline
 
 
                     // helpers = load(helperFile[0].getPath())
-                    helpers.parseJsonToCSV();
+                    helperFile.parseJsonToCSV();
                     
                 }
             }
