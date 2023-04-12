@@ -24,14 +24,15 @@ pipeline
             steps
             {
 
-                def files = findFiles(glob: '**/*.json')
+                
+                script {
+                    def files = findFiles(glob: '**/*.json')
                  echo "${files[0].name}"
-                // script {
-                //     // def helperFile = findFiles(glob: '**/helper.groovy')
-                //     def var2 = load 'D:/Automation/git/cypressJenkin/helper.groovy'
-                //     var2.parseJsonToCSV();
+                    // // def helperFile = findFiles(glob: '**/helper.groovy')
+                    // def var2 = load 'D:/Automation/git/cypressJenkin/helper.groovy'
+                    // var2.parseJsonToCSV();
                     
-                // }
+                }
             }
         }
     }
