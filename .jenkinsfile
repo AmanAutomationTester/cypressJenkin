@@ -29,9 +29,8 @@ pipeline
                     files.each {
                         name -> def props = readJSON file: "${name}"                                             
                         list.add(props.title);
-                    }   
-                    echo "aman singhal ${list}"
-                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';');
+                    }                      
+                    writeCSV file: '**/fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';');
                 }
             }
         }
