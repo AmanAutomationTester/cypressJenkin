@@ -21,3 +21,6 @@ import './commands'
 
 import "cypress-failed-log"
 
+import registerCypressGrep from '@cypress/grep/src/support'
+registerCypressGrep()
+
