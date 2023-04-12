@@ -4,13 +4,13 @@ pipeline
 
     stages
     {
-        stage('Build')
-        {
-            steps
-            {
-                // bat "npm install"
-            }
-        }
+        // stage('Build')
+        // {
+        //     steps
+        //     {
+        //         // bat "npm install"
+        //     }
+        // }
         // stage ('Test')
         // {
         //     steps
@@ -24,7 +24,7 @@ pipeline
             steps
             {
                 script {
-                    def helperFile = findFiles(glob: '**/helpers.groovy')
+                    def helperFile = findFiles(glob: '**/helpkers.groovy')
                     helpers = load(helperFile[0].getPath())
                     helpers.parseJsonToCSV();
                 }
