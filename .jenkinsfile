@@ -31,7 +31,7 @@ pipeline
                         list.add(props.title);
                     }   
                     echo "aman singhal ${list}"
-                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT;
+                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withDelimiter(;);
                 }
             }
         }
