@@ -27,6 +27,10 @@ pipeline
                 
                 script {
                     def files = findFiles(glob: '**/logs/*.json')
+                    files.each{name ->
+                        def props = readJSON file: '**/logs/name'
+                        echo "megha ${props.title}"
+                    }
                  echo " aman singhal${files[0].name}"
                     // // def helperFile = findFiles(glob: '**/helper.groovy')
                     // def var2 = load 'D:/Automation/git/cypressJenkin/helper.groovy'
