@@ -29,7 +29,7 @@ pipeline
                     def files = findFiles(glob: '**/logs/*.json')
                     files.each{name ->                   
                         def props = readJSON file: "${name}"
-                        writeCSV file: 'fail.csv', records: "aman", format: CSVFormat.Builder
+                        writeCSV file: 'fail.csv', records: 'aman', format: CSVFormat.Builder
                         echo "megha ${props.title}"
                     }
                  
