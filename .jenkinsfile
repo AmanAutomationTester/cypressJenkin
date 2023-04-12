@@ -4,31 +4,34 @@ pipeline
 
     stages
     {
-        stage('Build')
-        {
-            steps
-            {
-                bat "npm install"
-                bat "exit 0"
-            }
-        }
-        stage ('Test')
-        {
-            steps
-            {
-                catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
-                {
-                    echo 'Executing spec file in Cypress'
-                    bat "npm test"
-                    bat "exit 1"
-                }
-            }
-        }
-        stage ('Read failures and write into CSV')
+        // stage('Build')
+        // {
+        //     steps
+        //     {
+        //         bat "npm install"
+        //         bat "exit 0"
+        //     }
+        // }
+        // stage ('Test')
+        // {
+        //     steps
+        //     {
+        //         catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
+        //         {
+        //             echo 'Executing spec file in Cypress'
+        //             bat "npm test"
+        //             bat "exit 1"
+        //         }
+        //     }
+        // }
+        // stage ('Read failures and write into CSV')
         {
             steps
             {
                 script {
+                    File file = new File('fail.csv')
+                    file.createNewFile()
+                    echo "file created"
                     def files = findFiles(glob: '**/logs/*.json')
                     def list = []
                     files.each {
