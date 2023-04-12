@@ -27,8 +27,8 @@ pipeline
                     def helperFile = findFiles(glob: '**/helper.groovy')
                     echo helperFile;
 
-                    def helperFile 1= findFiles(glob: 'helper.groovy')
-                    echo helperFile1;
+                    // def helperFile 1= findFiles(glob: 'helper.groovy')
+                    // echo helperFile1;
 
 
                     // helpers = load(helperFile[0].getPath())
