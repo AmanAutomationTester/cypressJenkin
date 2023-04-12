@@ -9,19 +9,20 @@ pipeline
             steps
             {
                 bat "npm install"
+                sh 'exit 0'
             }
         }
         stage ('Test')
         {
             steps
             {
-                try{
-                echo 'Executing spec file in Cypress'
-                bat "npm test"
+                try {
+                    echo 'Executing spec file in Cypress'
+                    bat "npm test"
                 }
-                catch(buildResult: 'SUCCESS', stageResult: 'FAILURE')
+                catch (buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    bat "exit 1"
+                    sh 'exit 1'
                 }
             }
         }
@@ -36,7 +37,8 @@ pipeline
                         name -> def props = readJSON file: "${name}"                                             
                         list.add(props.title);
                     }                      
-                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';');
+                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';'); 
+                    sh 'exit 0'
                 }
             }
         }
