@@ -24,7 +24,7 @@ pipeline
         //         }
         //     }
         // }
-        // stage ('Read failures and write into CSV')
+        stage ('Read failures and write into CSV')
         {
             steps
             {
