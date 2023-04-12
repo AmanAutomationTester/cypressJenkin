@@ -48,8 +48,8 @@ pipeline
                 allowMissing: false, 
                 alwaysLinkToLastBuild: false, 
                 keepAll: true, 
-                reportDir: 'C:/Users/amsinghal/.jenkins/workspace/poc/cypress/results', 
-                reportFiles: 'mochawesome.html', 
+                reportDir: 'C:/Users/amsinghal/.jenkins/workspace/poc/cypress/reports', 
+                reportFiles: 'index.html', 
                 reportName: 'My HTML Report'
             ])
         }
