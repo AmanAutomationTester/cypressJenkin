@@ -2,6 +2,7 @@ import groovy.json.JsonSlurper
 import groovy.io.FileType
 
 def parseJsonToCSV() {
+    echo "Under helper file aman"
     def list = []
     def dir = new File("logs")
 
