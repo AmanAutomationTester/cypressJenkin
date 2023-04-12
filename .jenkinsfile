@@ -24,7 +24,13 @@ pipeline
             steps
             {
                 script {
-                    def helperFile = findFiles(glob: '**/helpkers.groovy')
+                    def helperFile = findFiles(glob: '**/helper.groovy')
+                    echo helperFile;
+
+                    def helperFile 1= findFiles(glob: 'helper.groovy')
+                    echo helperFile1;
+
+
                     // helpers = load(helperFile[0].getPath())
                     helpers.parseJsonToCSV();
                     
