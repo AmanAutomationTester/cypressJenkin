@@ -28,10 +28,7 @@ pipeline
         {
             steps
             {
-                script {
-                    File file = new File('fail.csv')
-                    file.createNewFile()
-                    echo "file created"
+                script {                   
                     def files = findFiles(glob: '**/logs/*.json')
                     def list = []
                     files.each {
@@ -49,7 +46,7 @@ pipeline
             {
                 script {
                     def records = readCSV file: 'fail.csv', format: CSVFormat.DEFAULT;
-                    echo "aman singhal ${records}"
+                    echo "aman singhal ${records.values}"
                     bat "exit 0"
                 }
             }
