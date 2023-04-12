@@ -19,23 +19,5 @@ import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-// @ts-check
-/// <reference types="cypress" />
-
-// import cypressGrep from '../../src/support'
-// import cypressGrep1 from '../src/support'
-// cypressGrep1()
-
-const registerCypressGrep = require('@cypress/grep')
-registerCypressGrep()
-
-import 'cypress-failed-log';
-
-
-
-
-
-
-
-
+import "cypress-failed-log"
 

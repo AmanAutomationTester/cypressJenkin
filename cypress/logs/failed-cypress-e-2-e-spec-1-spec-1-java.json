@@ -1,0 +1,11 @@
+{
+  "specName": "cypress\\e2e\\spec1.cy.js",
+  "title": "java",
+  "suiteName": "spec 1",
+  "testName": "spec 1 java",
+  "testError": "Timed out retrying after 4000ms: Expected to find content: 'Sorry, something went wrong' but never did.",
+  "testCommands": [
+    "contains Sorry, something went wrong",
+    "assert expected **undefined** to exist in the DOM"
+  ]
+}
