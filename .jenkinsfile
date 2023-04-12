@@ -30,22 +30,13 @@ pipeline
                     files.each{name ->                   
                         def props = readJSON file: "${name}"
                         def records = [['key'], [props.title]]
-                        echo "megha ${props.title}"
+                        // echo "megha ${props.title}"
+                        def list = []
+                        list.add(props.title);
+                        echo "aman singhal ${list}"
                         writeCSV file: 'fail.csv', records: records, format: CSVFormat.EXCEL;
                         
-                    }
-
-
-
-
-
-
-
-
-                 
-                    // // def helperFile = findFiles(glob: '**/helper.groovy')
-                    // def var2 = load 'D:/Automation/git/cypressJenkin/helper.groovy'
-                    // var2.parseJsonToCSV();
+                    }              
                     
                 }
             }
