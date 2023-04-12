@@ -29,9 +29,19 @@ pipeline
                     def files = findFiles(glob: '**/logs/*.json')
                     files.each{name ->                   
                         def props = readJSON file: "${name}"
-                        writeCSV file: 'fail.csv', records: props, format: CSVFormat.EXCEL;
+                        def records = [['key', 'value'], ['a', 'b']]
                         echo "megha ${props.title}"
+                        writeCSV file: 'fail.csv', records: records, format: CSVFormat.EXCEL;
+                        
                     }
+
+
+
+
+
+
+
+
                  
                     // // def helperFile = findFiles(glob: '**/helper.groovy')
                     // def var2 = load 'D:/Automation/git/cypressJenkin/helper.groovy'
