@@ -27,7 +27,7 @@ pipeline
                 
                 script {
                     def files = findFiles(glob: '**/*.json')
-                 echo "${files[0].name}"
+                 echo " aman singhal${files[0].name}"
                     // // def helperFile = findFiles(glob: '**/helper.groovy')
                     // def var2 = load 'D:/Automation/git/cypressJenkin/helper.groovy'
                     // var2.parseJsonToCSV();
