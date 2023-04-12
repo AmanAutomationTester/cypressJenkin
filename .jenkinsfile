@@ -41,4 +41,17 @@ pipeline
             }
         }
     }
+
+    post {
+        always {
+            publishHTML(target: [
+                allowMissing: false, 
+                alwaysLinkToLastBuild: false, 
+                keepAll: true, 
+                reportDir: 'C:/Users/amsinghal/.jenkins/workspace/poc/cypress/results', 
+                reportFiles: 'mochawesome.html', 
+                reportName: 'My HTML Report'
+            ])
+        }
+    }
 }
