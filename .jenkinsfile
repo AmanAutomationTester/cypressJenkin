@@ -29,7 +29,7 @@ pipeline
                     def files = findFiles(glob: '**/logs/*.json')
                     files.each{name ->                   
                         def props = readJSON file: "${name}"
-                        def records = [['key'], ['a']]
+                        def records = [['key'], [props.title]]
                         echo "megha ${props.title}"
                         writeCSV file: 'fail.csv', records: records, format: CSVFormat.EXCEL;
                         
