@@ -27,16 +27,18 @@ pipeline
                 
                 script {
                     def files = findFiles(glob: '**/logs/*.json')
+                    def list = []
                     files.each{name ->                   
                         def props = readJSON file: "${name}"
                         def records = [['key'], [props.title]]
                         // echo "megha ${props.title}"
-                        def list = []
+                        
                         list.add(props.title);
                         echo "aman singhal ${list}"
-                        writeCSV file: 'fail.csv', records: records, format: CSVFormat.EXCEL;
                         
-                    }              
+                        
+                    }   
+                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.EXCEL;           
                     
                 }
             }
