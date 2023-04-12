@@ -9,7 +9,7 @@ pipeline
             steps
             {
                 bat "npm install"
-                sh 'exit 0'
+                bat "exit 0"
             }
         }
         stage ('Test')
@@ -22,7 +22,7 @@ pipeline
                 }
                 catch (buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
-                    sh 'exit 1'
+                    bat "exit 1"
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline
                         list.add(props.title);
                     }                      
                     writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';'); 
-                    sh 'exit 0'
+                    bat "exit 0"
                 }
             }
         }
