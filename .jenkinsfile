@@ -16,12 +16,10 @@ pipeline
         {
             steps
             {
-                try {
-                    echo 'Executing spec file in Cypress'
-                    bat "npm test"
-                }
                 catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
+                    echo 'Executing spec file in Cypress'
+                    bat "npm test"
                     bat "exit 1"
                 }
             }
