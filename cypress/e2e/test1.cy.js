@@ -1,16 +1,16 @@
 
 describe('block for config', () => {
   
-    it('should run', () => {
+    it('selenium', () => {
 
       assert.ok(false);
     })
   
-    it('should also work', () => {
+    it('java', () => {
       assert.ok(true);
     })
 
-    it('should run as failures', () => {
+    it('eclipse', () => {
       assert.ok(true);
     })
   })

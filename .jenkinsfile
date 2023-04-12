@@ -19,7 +19,7 @@ pipeline
         //         bat "npm test"
         //     }
         // }
-        stage ('Read failures json')
+        stage ('Read failures and write into CSV')
         {
             steps
             {
@@ -30,7 +30,7 @@ pipeline
                         name -> def props = readJSON file: "${name}"                                             
                         list.add(props.title);
                     }                      
-                    writeCSV file: 'cypress/fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';');
+                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';');
                 }
             }
         }
