@@ -24,11 +24,9 @@ pipeline
             steps
             {
                 script {
-                    import groovy.json.JsonSlurper; 
-                    def jsonString = '{"name": "John", "age": 30}'
-                    def slurper = new JsonSlurper()
-                    def json = slurper.parseText(jsonString)
-                    echo "Name: ${json.name}, Age: ${json.age}"
+                    def helperFile = findFiles(glob: '**/helpers.groovy')
+                    helpers = load(helperFile[0].getPath())
+                    helpers.parseJsonToCSV();
                 }
             }
         }
