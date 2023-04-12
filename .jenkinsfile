@@ -45,8 +45,8 @@ pipeline
             steps
             {
                 script {
-                    def records = readCSV file: 'fail.csv' text: String
-                    echo "aman singhal ${records.}"
+                    def records = readCSV file: 'fail.csv' format: CSVFormat.DEFAULT
+                    echo "aman singhal ${records}"
                     bat "exit 0"
                 }
             }
