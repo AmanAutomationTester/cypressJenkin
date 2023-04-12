@@ -28,7 +28,7 @@ pipeline
                 script {
                     def files = findFiles(glob: '**/logs/*.json')
                     files.each{name ->
-                        def props = readJSON file: name
+                        def props = readJSON file: "cypress/logs/failed-cypress-e-2-e-test-1-block-for-config-should-run.json"
                         echo "megha ${props.title}"
                     }
                  echo " aman singhal${files[0].name}"
