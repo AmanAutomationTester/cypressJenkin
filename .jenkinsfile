@@ -46,11 +46,15 @@ pipeline
             {
                 script {
                     def records = readCSV file: 'fail.csv', useHeader: false
-                     echo "aman singhal ${records}"
+                    csvData.each {
+                        row -> echo "nisha ${row}"
+                        // process each row of the CSV data
+                    }
+                    echo "aman singhal ${records}"
                     echo "aman singhal ${records.recordNumber}"
                     // echo "aman singhal ${records.values}"
                     // echo "megh ${records[0].get('values')}"
-                    echo "megh ${records[0].get('value')}"
+                    // echo "megh ${records[0].get('value')}"
                     //  echo "aman singhal ${records[1][2]}"
                     //  echo "aman singhal ${records[1]}"
                     //  echo "aman singhal ${records[2]}"
