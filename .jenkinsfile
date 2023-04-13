@@ -46,7 +46,8 @@ pipeline
             {
                 script {
                     def records = readCSV file: 'fail.csv', format: CSVFormat.DEFAULT; 
-                    echo "aman singhal ${records.values}"
+                     echo "aman singhal ${records}"
+                    echo "aman singhal ${records.comment}"
                     //  echo "aman singhal ${records[1][2]}"
                     //  echo "aman singhal ${records[1]}"
                     //  echo "aman singhal ${records[2]}"
