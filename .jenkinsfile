@@ -45,7 +45,7 @@ pipeline
             steps
             {
                 script {
-                    def records = readCSV file: 'fail.csv', format: CSVFormat.DEFAULT.withSkipHeaderRecord(); 
+                    def records = readCSV file: 'fail.csv', useHeader: false
                      echo "aman singhal ${records}"
                     echo "aman singhal ${records.recordNumber}"
                     // echo "aman singhal ${records.values}"
