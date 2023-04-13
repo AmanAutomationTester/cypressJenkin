@@ -48,7 +48,9 @@ pipeline
                     def records = readCSV file: 'fail.csv', format: CSVFormat.DEFAULT; 
                      echo "aman singhal ${records}"
                     echo "aman singhal ${records.recordNumber}"
-                    echo "aman singhal ${records.values}"
+                    // echo "aman singhal ${records.values}"
+                    echo "megh ${records[0].get('values')}"
+                    echo "megh ${records[0].get('value')}"
                     //  echo "aman singhal ${records[1][2]}"
                     //  echo "aman singhal ${records[1]}"
                     //  echo "aman singhal ${records[2]}"
