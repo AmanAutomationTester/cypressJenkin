@@ -45,11 +45,11 @@ pipeline
             steps
             {
                 script {
-                    def records = readCSV file: 'fail.csv', format: CSVFormat.DEFAULT; 
+                    def records = readCSV file: 'fail.csv', format: CSVFormat.DEFAULT.withSkipHeaderRecord(); 
                      echo "aman singhal ${records}"
                     echo "aman singhal ${records.recordNumber}"
                     // echo "aman singhal ${records.values}"
-                    echo "megh ${records[0].get('values')}"
+                    // echo "megh ${records[0].get('values')}"
                     echo "megh ${records[0].get('value')}"
                     //  echo "aman singhal ${records[1][2]}"
                     //  echo "aman singhal ${records[1]}"
