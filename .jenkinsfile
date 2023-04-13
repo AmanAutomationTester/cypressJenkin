@@ -45,7 +45,8 @@ pipeline
             steps
             {
                 script {
-                    bat "npm test --env grep = 'java;javascript;typescript'"
+                    def records = readCSV file: 'fail.csv', skipFirstLine: true
+                    bat "npm test --env grep = ${records}"
                     // def records = readCSV file: 'fail.csv', skipFirstLine: true
                     // records.each {
                     //     row -> echo "Name: ${row[0]}"
