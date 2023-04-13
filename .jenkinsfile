@@ -26,7 +26,7 @@ pipeline
         }
         stage ('Read failures and write into CSV')
         {
-            stepsk
+            steps
             {
                 script {
                     def files = findFiles(glob: '**/logs/*.json')
