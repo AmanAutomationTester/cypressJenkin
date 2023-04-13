@@ -45,11 +45,11 @@ pipeline
             steps
             {
                 script {
-                    def records = readCSV file: 'fail.csv', useHeader: false
+                    def records = readCSV file: 'fail.csv', skipFirstLine: true
                     csvData.each {
-                        row -> echo "nisha ${row}"
-                        // process each row of the CSV data
+                        row -> echo "Name: ${row[0]}"
                     }
+                    
                     echo "aman singhal ${records}"
                     echo "aman singhal ${records.recordNumber}"
                     // echo "aman singhal ${records.values}"
