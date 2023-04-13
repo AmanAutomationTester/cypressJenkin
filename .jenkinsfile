@@ -39,6 +39,33 @@ pipeline
                     bat "exit 0"
                 }
             }
+            stage ('Rerun failed tests')
+            {
+                steps
+                {
+                    script {
+                        def records = readCSV file: 'fail.csv', format: CSVFormat.DEFAULT; 
+                        echo "aman singhal ${records[1][1]}"
+                        //  echo "aman singhal ${records[1][2]}"
+                        //  echo "aman singhal ${records[1]}"
+                        //  echo "aman singhal ${records[2]}"
+                        bat "exit 0"
+                    }
+                }
+            }
+        }
+
+        post {
+            always {
+                publishHTML(target: [
+                    allowMissing: false, 
+                    alwaysLinkToLastBuild: false, 
+                    keepAll: true, 
+                    reportDir: 'reports', 
+                    reportFiles: 'index.html', 
+                    reportName: 'My HTML Report'
+                ])
+            }
         }
     }
 }
