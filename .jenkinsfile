@@ -46,7 +46,7 @@ pipeline
             {
                 script {
                     def records = readCSV file: 'fail.csv', skipFirstLine: true
-                    csvData.each {
+                    records.each {
                         row -> echo "Name: ${row[0]}"
                     }
                     
