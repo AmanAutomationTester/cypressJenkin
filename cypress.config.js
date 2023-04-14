@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   "reporter": "cypress-mochawesome-reporter",
   "reporterOptions": {
-    "reportDir": "cypress/reports",
+    "reportDir": "cypress/reports/mochawesome-report",
     "charts": true,
     "reportPageTitle": "My Test Suite",
     "embeddedScreenshots": true,
