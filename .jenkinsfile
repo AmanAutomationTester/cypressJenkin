@@ -49,7 +49,7 @@ pipeline
                     echo "aman singhal ${records}"
                     def testcases = records.values.flatten()
                     echo "megh ${testcases}"
-                    def new = testcases.lstrip();
+                    str1 new = testcases.lstrip();
                     echo "goyal ${new}"
                     // echo "aman singhal ${records.values.lstrip()}"       
                     bat "npx cypress run --env grep='${records.values.flatten()}'"          
