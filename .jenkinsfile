@@ -48,7 +48,7 @@ pipeline
                     def records = readCSV file: 'fail.csv', skipFirstLine: true            
                     echo "aman singhal ${records}"
                     def testcases = records.values.flatten()
-                    echo "megh ${testcases..flatten()}"
+                    echo "megh ${testcases.flatten()}"
                     // str1 new = testcases.lstrip();
                     // echo "goyal ${new}"
                     // echo "aman singhal ${records.values.lstrip()}"       
