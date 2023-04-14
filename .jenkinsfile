@@ -12,18 +12,18 @@ pipeline
                 bat "exit 0"
             }
         }
-        stage ('Test')
-        {
-            steps
-            {
-                catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
-                {
-                    echo 'Executing spec file in Cypress'
-                    // bat "npm test"
-                    bat "exit 1"
-                }
-            }
-        }
+        // stage ('Test')
+        // {
+        //     steps
+        //     {
+        //         catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
+        //         {
+        //             echo 'Executing spec file in Cypress'
+        //             // bat "npm test"
+        //             bat "exit 1"
+        //         }
+        //     }
+        // }
         // stage ('Read failures and write into CSV')
         // {
         //     steps
@@ -45,7 +45,7 @@ pipeline
             steps
             {
                 script {
-                    def records = readCSV file: 'fail.csv', skipFirstLine: true
+                    // def records = readCSV file: 'fail.csv', skipFirstLine: true
                     bat "npx cypress run --env grep="java;javascript;typescript""
                     // def records = readCSV file: 'fail.csv', skipFirstLine: true
                     // records.each {
