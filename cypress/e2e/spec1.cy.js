@@ -1,8 +1,8 @@
 describe('spec 1', () => {
 
   it('selenium', () => {
-
-    cy.contains("Sorry, something went wrong").should('not.exist')
+    cy.visit("https://www.selenium.dev/")
+    cy.contains("Sorry, something went wrong").should('exist')
   })
 
   it('java', () => {

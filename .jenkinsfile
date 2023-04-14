@@ -12,6 +12,14 @@ pipeline
                 bat "exit 0"
             }
         }
+        stage('Cleanup')
+        {
+            steps {
+                dir ('bin') {
+                    deleteDir()
+                }
+            }
+        }
         stage ('Test')
         {
             steps
