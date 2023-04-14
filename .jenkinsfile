@@ -4,42 +4,42 @@ pipeline
 
     stages
     {
-        stage('Build')
-        {
-            steps
-            {
-                bat "npm install"
-                bat "exit 0"
-            }
-        }
-        stage ('Test')
-        {
-            steps
-            {
-                catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
-                {
-                    echo 'Executing spec file in Cypress'
-                    bat "npm test"
-                    bat "exit 1"
-                }
-            }
-        }
-        stage ('Read failures and write into CSV')
-        {
-            steps
-            {
-                script {
-                    def files = findFiles(glob: '**/logs/*.json')
-                    def list = []
-                    files.each {
-                        name -> def props = readJSON file: "${name}"                                             
-                        list.add(props.title);
-                    }                      
-                    writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';'); 
-                    bat "exit 0"
-                }
-            }
-        }
+        // stage('Build')
+        // {
+        //     steps
+        //     {
+        //         bat "npm install"
+        //         bat "exit 0"
+        //     }
+        // }
+        // stage ('Test')
+        // {
+        //     steps
+        //     {
+        //         catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
+        //         {
+        //             echo 'Executing spec file in Cypress'
+        //             bat "npm test"
+        //             bat "exit 1"
+        //         }
+        //     }
+        // }
+        // stage ('Read failures and write into CSV')
+        // {
+        //     steps
+        //     {
+        //         script {
+        //             def files = findFiles(glob: '**/logs/*.json')
+        //             def list = []
+        //             files.each {
+        //                 name -> def props = readJSON file: "${name}"                                             
+        //                 list.add(props.title);
+        //             }                      
+        //             writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';'); 
+        //             bat "exit 0"
+        //         }
+        //     }
+        // }
         stage ('Rerun failed tests')
         {
             steps
@@ -47,22 +47,22 @@ pipeline
                 script {
                     def records = readCSV file: 'fail.csv', skipFirstLine: true            
                     echo "aman singhal ${records}"
-                    echo "aman singhal ${records.values}"                 
+                    echo "aman singhal ${records.values.flatten()}"                 
                     bat "exit 0"
                 }
             }
         }
     }
-    post {
-        always {
-            publishHTML(target: [
-                allowMissing: false, 
-                alwaysLinkToLastBuild: false, 
-                keepAll: true, 
-                reportDir: 'cypress/reports/mochawesome-report', 
-                reportFiles: 'index.html', 
-                reportName: 'My HTML Report'
-            ])
-        }
-    }
+    // post {
+    //     always {
+    //         publishHTML(target: [
+    //             allowMissing: false, 
+    //             alwaysLinkToLastBuild: false, 
+    //             keepAll: true, 
+    //             reportDir: 'cypress/reports/mochawesome-report', 
+    //             reportFiles: 'index.html', 
+    //             reportName: 'My HTML Report'
+    //         ])
+    //     }
+    // }
 }
