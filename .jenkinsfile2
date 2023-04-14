@@ -17,11 +17,11 @@ pipeline
             steps
             {
                 script {
-                    def records = readCSV file: 'fail.csv', skipFirstLine: true                                
-                    def testcases = records.values.flatten()
-                    def myString = testcases.join(',').replaceAll(/(;)\s*$/, '')               
-                    bat "npx cypress run --env grep=${myString}"          
-                    bat "exit 0"
+                     def records = readCSV file: 'C:/Users/amsinghal/.jenkins/workspace/cypressJob/fail.csv', skipFirstLine: true                                
+                     def testcases = records.values.flatten()
+                     def myString = testcases.join(',').replaceAll(/(;)\s*$/, '')               
+                     bat "npx cypress run --env grep=${myString}"          
+                     bat "exit 0"
                 }
             }
         }
