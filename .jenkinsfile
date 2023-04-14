@@ -48,7 +48,7 @@ pipeline
                     def records = readCSV file: 'fail.csv', skipFirstLine: true            
                     echo "aman singhal ${records}"
                     echo "aman singhal ${records.values.flatten()}"       
-                    bat "npm test ${records.values.flatten()}"          
+                    bat "npm test --env grep= '${records.values.flatten()}'"          
                     bat "exit 0"
                 }
             }
