@@ -19,7 +19,7 @@ pipeline
                 catchError (buildResult: 'SUCCESS', stageResult: 'FAILURE')
                 {
                     echo 'Executing spec file in Cypress'
-                    // bat "npm test"
+                    bat "npm test"
                     bat "exit 1"
                 }
             }
@@ -51,7 +51,6 @@ pipeline
         //             // records.each {
         //             //     row -> echo "Name: ${row[0]}"
         //             // }
-                    
         //             // echo "aman singhal ${records}"
         //             // echo "aman singhal ${records.recordNumber}"
         //             // echo "aman singhal ${records.values}"
