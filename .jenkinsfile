@@ -4,14 +4,6 @@ pipeline
 
     stages
     {
-        stage('Build')
-        {
-            steps
-            {
-                bat "npm install"
-                bat "exit 0"
-            }
-        }
         stage('Cleanup')
         {
             steps {
@@ -20,6 +12,15 @@ pipeline
                 }
             }
         }
+        stage('Build')
+        {
+            steps
+            {
+                bat "npm install"
+                bat "exit 0"
+            }
+        }
+        
         stage ('Test')
         {
             steps
@@ -57,7 +58,9 @@ pipeline
                 keepAll: true, 
                 reportDir: 'cypress/reports/mochawesome-report', 
                 reportFiles: 'index.html', 
-                reportName: 'Cypress Report'
+                reportName: 'Cypress Report', 
+                charts: true, 
+                embeddedScreenshots: true,
             ])
         }
     }
