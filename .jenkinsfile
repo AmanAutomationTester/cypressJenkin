@@ -47,7 +47,11 @@ pipeline
                 script {
                     def records = readCSV file: 'fail.csv', skipFirstLine: true            
                     echo "aman singhal ${records}"
-                    echo "aman singhal ${records.values.lstrip()}"       
+                    def testcases = records.values.flatten()
+                    echo "megh ${testcases}"
+                    def new = testcases.lstrip();
+                    echo "goyal ${new}"
+                    // echo "aman singhal ${records.values.lstrip()}"       
                     bat "npx cypress run --env grep='${records.values.flatten()}'"          
                     bat "exit 0"
                 }
