@@ -4,14 +4,14 @@ pipeline
 
     stages
     {
-        stage('Build')
-        {
-            steps
-            {
-                bat "npm install"
-                bat "exit 0"
-            }
-        }
+        // stage('Build')
+        // {
+        //     steps
+        //     {
+        //         bat "npm install"
+        //         bat "exit 0"
+        //     }
+        // }
         // stage ('Test')
         // {
         //     steps
@@ -46,7 +46,7 @@ pipeline
             {
                 script {
                     // def records = readCSV file: 'fail.csv', skipFirstLine: true
-                    bat "npx cypress run --env grep="java;javascript;typescript""
+                    bat 'npx cypress run --env grep="java;javascript;typescript"'
                     // def records = readCSV file: 'fail.csv', skipFirstLine: true
                     // records.each {
                     //     row -> echo "Name: ${row[0]}"
