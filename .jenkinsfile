@@ -53,7 +53,7 @@ pipeline
                     // str1 new = testcases.lstrip();
                     // echo "goyal ${new}"
                     // echo "aman singhal ${records.values.lstrip()}"       
-                    // bat "npx cypress run --env grep='${records.values.flatten()}'"          
+                    bat "npx cypress run --env grep='${myString}'"          
                     bat "exit 0"
                 }
             }
