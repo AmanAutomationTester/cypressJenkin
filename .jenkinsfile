@@ -20,7 +20,7 @@ pipeline
                 {
                     echo 'Executing spec file in Cypress'
                     bat "npm test"
-                    bat "exit 1"
+                    bat "exit 0"
                 }
             }
         }
