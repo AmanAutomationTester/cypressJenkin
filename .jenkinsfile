@@ -49,26 +49,23 @@ pipeline
                     echo "aman singhal ${records}"
                     def testcases = records.values.flatten()
                     def myString = testcases.join(',').replaceAll(/(;)\s*$/, '')
-                    echo "megh ${myString}"
-                    // str1 new = testcases.lstrip();
-                    // echo "goyal ${new}"
-                    // echo "aman singhal ${records.values.lstrip()}"       
-                    bat "npx cypress run --env grep='${myString}'"          
+                    echo "megh ${myString}"                         
+                    bat "npx cypress run --env grep=${myString}"          
                     bat "exit 0"
                 }
             }
         }
     }
-    // post {
-    //     always {
-    //         publishHTML(target: [
-    //             allowMissing: false, 
-    //             alwaysLinkToLastBuild: false, 
-    //             keepAll: true, 
-    //             reportDir: 'cypress/reports/mochawesome-report', 
-    //             reportFiles: 'index.html', 
-    //             reportName: 'My HTML Report'
-    //         ])
-    //     }
-    // }
+    post {
+        always {
+            publishHTML(target: [
+                allowMissing: false, 
+                alwaysLinkToLastBuild: false, 
+                keepAll: true, 
+                reportDir: 'cypress/reports/mochawesome-report', 
+                reportFiles: 'index.html', 
+                reportName: 'Re-Run Report'
+            ])
+        }
+    }
 }
