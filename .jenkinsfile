@@ -19,7 +19,7 @@ pipeline
             steps
             {
                 bat "npm install"
-                bat "exit 0"
+                // bat "exit 0"
             }
         }
         
@@ -31,7 +31,7 @@ pipeline
                 {
                     echo 'Executing spec file in Cypress'
                     bat "npm test"
-                    bat "exit 0"
+                    // bat "exit 0"
                 }
             }
         }
@@ -47,7 +47,7 @@ pipeline
                         list.add(props.title);
                     }                      
                     writeCSV file: 'fail.csv', records: list, format: CSVFormat.DEFAULT.withRecordSeparator(';'); 
-                    bat "exit 0"
+                    // bat "exit 0"
                 }
             }
         }
