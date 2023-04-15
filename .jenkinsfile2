@@ -10,8 +10,7 @@ pipeline
         {
             steps
             {
-                bat "npm install"
-                bat "exit 0"
+                bat "npm install"              
             }
         }       
         stage ('Rerun failed tests')
@@ -22,8 +21,7 @@ pipeline
                     def records = readCSV file: 'C:/Users/amsinghal/.jenkins/workspace/cypressJob/fail.csv', skipFirstLine: true                                
                     def testcases = records.values.flatten()
                     def myString = testcases.join(',').replaceAll(/(;)\s*$/, '')               
-                    bat "npx cypress run --env grep=${myString}"          
-                    bat "exit 0"
+                    bat "npx cypress run --env grep=${myString}"                             
                 }
             }
         }
