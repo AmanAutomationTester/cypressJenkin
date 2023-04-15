@@ -33,7 +33,7 @@ pipeline
                 }
             }
         }
-        stage ('Read failures tests and store into CSV')
+        stage ('Save failures test details')
         {
             steps
             {
