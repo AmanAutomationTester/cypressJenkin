@@ -1,13 +1,13 @@
 describe('spec 3', () => {
-  it('Verify India', () => {
+  it('India', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
 
-  it('Verify Indonesia', () => {
+  it('Indonesia', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
 
-  it('Verify China', () => {
+  it('China', () => {
     cy.contains("Sorry, something went wrong").should('exist')
   })
 })

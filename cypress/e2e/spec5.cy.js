@@ -1,13 +1,13 @@
 describe('spec 5', () => {
-    it('Verify School', () => {
+    it('School', () => {
       cy.contains("Sorry, something went wrong").should('exist')
     })
   
-    it('Verify University', () => {
+    it('University', () => {
       cy.contains("Sorry, something went wrong").should('exist')
     })
   
-    it('Verify Office', () => {
+    it('Office', () => {
       cy.contains("Sorry, something went wrong").should('exist')
     })
   })
