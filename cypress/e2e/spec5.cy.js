@@ -1,15 +1,13 @@
-//const { assert, expect } = require("chai")
-
 describe('spec 5', () => {
-    it('School', () => {
+    it('Verify School', () => {
       cy.contains("Sorry, something went wrong").should('exist')
     })
   
-    it('University', () => {
+    it('Verify University', () => {
       cy.contains("Sorry, something went wrong").should('exist')
     })
   
-    it('Office', () => {
+    it('Verify Office', () => {
       cy.contains("Sorry, something went wrong").should('exist')
     })
   })

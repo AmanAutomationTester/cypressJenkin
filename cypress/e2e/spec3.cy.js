@@ -1,15 +1,13 @@
-//const { assert, expect } = require("chai")
-
 describe('spec 3', () => {
-  it('India', () => {
+  it('Verify India', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
 
-  it('Indonesia', () => {
+  it('Verify Indonesia', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
 
-  it('China', () => {
+  it('Verify China', () => {
     cy.contains("Sorry, something went wrong").should('exist')
   })
 })

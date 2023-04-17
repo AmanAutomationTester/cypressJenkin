@@ -1,15 +1,14 @@
 describe('spec 1', () => {
-
-  it('selenium', () => {
+  it('Verify selenium', () => {
     cy.visit("https://www.selenium.dev/")
     cy.contains("Selenium WebDriver").should('not.exist')
   })
 
-  it('java', () => {
+  it('Verify java', () => {
     cy.contains("Sorry, something went wrong").should('exist')
   })
 
-  it('eclipse', () => {
+  it('Verify eclipse', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
 })
