@@ -1,4 +1,4 @@
-describe('spec 1', () => {
+describe('Verify spec 1', () => {
 
   it('selenium', () => {
     cy.visit("https://www.selenium.dev/")

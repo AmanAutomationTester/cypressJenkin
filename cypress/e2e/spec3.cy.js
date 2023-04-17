@@ -1,4 +1,4 @@
-describe('spec 3', () => {
+describe('Verify spec 3', () => {
   it('India', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
