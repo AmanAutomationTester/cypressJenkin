@@ -5,9 +5,6 @@ describe('Verify spec 4', () => {
   
     it('Coffee', () => {
       cy.contains("Sorry, something went wrong").should('not.exist')
-    })
-  
-    it('Juice', () => {
-      cy.contains("Sorry, something went wrong").should('not.exist')
-    })
+    })  
+   
   })

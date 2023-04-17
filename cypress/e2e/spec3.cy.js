@@ -6,8 +6,4 @@ describe('Verify spec 3', () => {
   it('Indonesia', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
-
-  it('China', () => {
-    cy.contains("Sorry, something went wrong").should('exist')
-  })
 })

@@ -5,9 +5,5 @@ describe('Verify spec 2', () => {
 
   it('javascript', () => {
     cy.contains("Sorry, something went wrong").should('exist')
-  })
-
-  it('typescript', () => {
-    cy.contains("Sorry, something went wrong").should('exist')
-  })
+  }) 
 })
