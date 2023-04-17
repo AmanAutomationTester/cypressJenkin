@@ -1,13 +1,13 @@
-describe('spec 4', () => {
-    it('Verify Tea', () => {
+describe('Verify spec 4', () => {
+    it('Tea', () => {
       cy.contains("Sorry, something went wrong").should('not.exist')
     })
   
-    it('Verify Coffee', () => {
+    it('Coffee', () => {
       cy.contains("Sorry, something went wrong").should('not.exist')
     })
   
-    it('Verify Juice', () => {
+    it('Juice', () => {
       cy.contains("Sorry, something went wrong").should('not.exist')
     })
   })
