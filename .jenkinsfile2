@@ -10,6 +10,7 @@ pipeline
         {
             steps
             {
+                  echo "Exectuing Build Stage"
                 // bat "npm install"              
             }
         }       
