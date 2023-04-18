@@ -4,6 +4,6 @@ describe('Verify spec 2', () => {
   })
 
   it('flaky2', () => {
-    cy.contains("Sorry, something went wrong").should('exist')
+    cy.contains("Sorry, something went wrong").should('not.exist')
   }) 
 })

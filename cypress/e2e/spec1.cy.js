@@ -6,7 +6,7 @@ describe('Verify spec 1', () => {
   })
 
   it('flaky1', () => {
-    cy.contains("Sorry, something went wrong").should('exist')
+    cy.contains("Sorry, something went wrong").should('not.exist')
   })
 
   it('eclipse', () => {
