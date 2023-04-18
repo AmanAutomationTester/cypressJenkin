@@ -5,7 +5,7 @@ describe('Verify spec 1', () => {
     cy.contains("Selenium WebDriver").should('not.exist')
   })
 
-  it('java', () => {
+  it('flaky1', () => {
     cy.contains("Sorry, something went wrong").should('exist')
   })
 

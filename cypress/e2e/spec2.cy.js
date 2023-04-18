@@ -3,7 +3,7 @@ describe('Verify spec 2', () => {
     cy.contains("Sorry, something went wrong").should('not.exist')
   })
 
-  it('javascript', () => {
+  it('flaky2', () => {
     cy.contains("Sorry, something went wrong").should('exist')
   }) 
 })
